@@ -514,7 +514,7 @@ class Model(nn.Module):
                 prompt_ = generate_prompt(self.data, self.description, self.num_classes,tueg_summary=tuab_summary)
             elif self.data == 'tuev':
                 feat = tuev_features_cpu[b]
-                current_y = y[b] if y is not None else None # only for train for label aug
+                # current_y = y[b] if y is not None else None # only for train for label aug
                 def get_tuev_feat(name):
                     return feat[tuev_feature_idx[name]].item()
                 tuev_summary = {
@@ -528,7 +528,7 @@ class Model(nn.Module):
                     "fast_ratio": get_tuev_feat("fast_ratio"),
                     "spectral_entropy": get_tuev_feat("spectral_entropy"),
                 }
-                prompt_ = generate_prompt(self.data,self.description,self.num_classes,tueg_summary=tuev_summary, y=current_y)
+                prompt_ = generate_prompt(self.data,self.description,self.num_classes,tueg_summary=tuev_summary)
             elif self.data == 'mmwm' or self.data == 'mmwm_small':
                 theta_global = theta_power[b].mean()
                 alpha_global = alpha_power[b].mean()
