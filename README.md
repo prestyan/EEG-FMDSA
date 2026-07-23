@@ -11,3 +11,12 @@ Electroencephalography (EEG) signal decoding plays an important role in brain-co
 Please obtain the weights from the official repositories of DARE-EEG and Codebrain, the links are as follows.
 - DARE-EEG: https://arxiv.org/abs/2605.18298
 - CodeBrain: https://arxiv.org/abs/2506.09110
+  
+The weights of the EEG foundation models should be placed in the appropriate folder:
+
+```bash
+./training/DARE-EEG_base.ckpt
+./training/CodeBrain.ckpt
+./codebook/DARE-EEG_base.ckpt
+./codebook/CodeBrain.ckpt
+```
