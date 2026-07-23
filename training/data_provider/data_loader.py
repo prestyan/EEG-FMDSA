@@ -158,9 +158,6 @@ def get_data(sub,data_path,few_shot_number = 1, is_few_EA = False, target_sample
     subject_id = 0
     for i in range(1,10):
         if i == sub:
-            # source_train_x.extend(session_1_x_sub)
-            # source_train_y.extend(session_1_y_sub)
-            # source_train_s.append(test_s)
             continue
         train_path = os.path.join(data_path,r'sub{}_train/Data.mat'.format(i))
         train_data = sio.loadmat(train_path)
@@ -279,7 +276,7 @@ class CustomDataset(Dataset):
         with self.db.begin(write=False) as txn:
             all_keys = pickle.loads(txn.get('__keys__'.encode()))
             if mode == 'train':
-                self.keys = list(all_keys[mode]) + list(all_keys['val'])
+                self.keys = list(all_keys[mode])
             else:
                 self.keys = list(all_keys[mode])
 
