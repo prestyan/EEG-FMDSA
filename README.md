@@ -20,3 +20,15 @@ The weights of the EEG foundation models should be placed in the appropriate fol
 ./codebook/DARE-EEG_base.ckpt
 ./codebook/CodeBrain.ckpt
 ```
+## Get Started
+
+For the pre-trained codebook:
+```bash
+cd codebook
+python pretrain_engine.py
+```
+For downtasks using FMDSA training a LLM:
+```bash
+cd training
+bash run_command.sh
+```
