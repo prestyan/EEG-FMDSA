@@ -49,7 +49,7 @@ def data_provider(args, flag, sub):
             "P7", "P3", "PZ", "P4", "P8",
             "O1", "OZ", "O2"
         ]
-        train_dataset,valid_dataset,test_dataset = get_wm_data_per_subject_split(data_path=args.data_path, split=(0.8, 0., 0.2), use_channels=mmwm_channels)
+        train_dataset,valid_dataset,test_dataset = get_wm_data_per_subject_split(data_path=args.data_path, split=(0.6, 0.2, 0.2), use_channels=mmwm_channels)
     elif args.data == 'mmwm_small':
         mmwm_channels = [
             "FP1", "FP2",
@@ -60,7 +60,7 @@ def data_provider(args, flag, sub):
             "P7", "P3", "PZ", "P4", "P8",
             "O1", "OZ", "O2"
         ]
-        train_dataset,valid_dataset,test_dataset = data_fn(data_path=args.data_path, sub=sub, use_channels=mmwm_channels, split=(0.8,0.,0.2))
+        train_dataset,valid_dataset,test_dataset = data_fn(data_path=args.data_path, sub=sub, use_channels=mmwm_channels, split=(0.6,0.2,0.2))
     elif args.data == 'bcic2020_T3':
         train_dataset, valid_dataset, test_dataset = data_fn(args.data_path)
     else: 
