@@ -529,7 +529,7 @@ def main():
         seed_everything(args.seed)
         codebook_load_path = args.codebook_load_path + f"rcb_adapt_gumbel_bcic2020t3.pt"
         # log_path = args.log_dir + args.data + '.txt'
-        log_path = args.log_dir + args.data + '_TimeLLM.txt'
+        log_path = args.log_dir + args.data + '_ours.txt'
         print("LOG TO: ", log_path)
         print("LOAD CODEBOOK FROM: ", codebook_load_path)
         train_loader, val_loader, test_loader = data_provider(args=args, flag="ALL", sub=i)
@@ -600,7 +600,7 @@ def main():
         trainer.fit(
             lit_model,
             train_dataloaders=train_loader,
-            val_dataloaders=test_loader,
+            val_dataloaders=val_loader,
         )
         
         # trainer.validate(lit_model, test_loader)
