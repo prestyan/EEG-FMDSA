@@ -2,7 +2,7 @@ python run_main.py --description ' Motor imagery EEG signals from the BCIC-IV-2b
     --log_dir './logs/' --seed 2026 --model_comment 'EEG Classfication' --model 'EEGLLM' --strategy 'auto' \
     --train_epochs 40 --batch_size 64 --learning_rate 0.0005 --devices 0,1,2 \
     --load_path './DARE-EEG_base.ckpt' --codebook_load_path '../codebook/saved_codebook/' \
-    --data 'bcic2a' --data_path '~/data/downtasks/BCIC2020_T3/preprocessed_BCIC2020_T3' --num_subjects 8 \
+    --data 'bcic2b' --data_path '~/data/downtasks/BCIC_2b_0_38HZ' --num_subjects 8 \
     --seq_len 512 --enc_in 22 --num_class 4 --patch_size 64 --hidden_dim 256 --depth 8 --num_heads 4 --embed_num 4 --mlp_ratio 4.0 \
     --dropout 0.3 \
     --num_codes 512 --code_dim 256 --beta 0.25 \
