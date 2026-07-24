@@ -8,7 +8,7 @@ python run_main.py --description ' Motor imagery EEG signals from the BCIC-IV-2b
     --num_codes 512 --code_dim 256 --beta 0.25 \
     --llm_model GPT2 --llm_dim 768 --llm_layers 6 --n_heads 8 --d_ff 96 \
     --use_lora \
-    # --is_binary \
+    --is_binary \
     # if timellm for seedv, set lr to 0.005, epoch to 100
     # GPT2 layers: (12, if too deep set to 6) QWEN3(28, 10)
     # mmwm: Working memory EEG segments for binary cognitive workload classification (low workload and high workload), represented as discrete token sequences.
